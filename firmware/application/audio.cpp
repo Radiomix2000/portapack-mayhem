@@ -178,6 +178,22 @@ void stop() {
 	audio_codec->microphone_disable();
 }
 
+
+//Add internal mic support
+void internal_start() {
+	//audio_codec->microphone_enable();
+	audio_codec->microphone_internal_enable();
+	i2s::i2s0::rx_start();
+}
+
+void internal_stop() {
+	i2s::i2s0::rx_stop();
+	//audio_codec->microphone_disable();
+	audio_codec->microphone_internal_disable();
+}
+
+
+
 } /* namespace input */
 
 namespace headphone {

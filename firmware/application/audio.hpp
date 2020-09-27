@@ -51,6 +51,8 @@ public:
 
 	virtual void microphone_enable() = 0;
 	virtual void microphone_disable() = 0;
+	virtual void microphone_internal_enable() = 0;
+	virtual void microphone_internal_disable() = 0;
 
 	virtual size_t reg_count() const = 0;
 	virtual size_t reg_bits() const = 0;
@@ -74,6 +76,9 @@ namespace input {
 
 void start();
 void stop();
+
+void internal_start();
+void internal_stop();
 
 } /* namespace input */
 
